@@ -15,7 +15,7 @@ fn infix_to_postfix(expression: String) -> String {
     let mut stack: Vec<char> = vec![];
     for ch in expression.chars() {
         // If ch is num or var, push onto res string
-        if ch.is_alphanumeric() { res.push(ch); }
+        if ch.is_alphanumeric() || ch == '.' { res.push(ch); }
         // If ch is start parentheses, push onto stack
         else if ch == '(' { stack.push(ch); }
         // If ch is end parentheses, put parentheses operators onto string
